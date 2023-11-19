@@ -1,11 +1,8 @@
 from sympy import symbols, diff, simplify, integrate
 import logging
-import tkinter as tk
 
 logging.basicConfig(format = '%(levelname)s: %(message)s',
                     level=logging.DEBUG)
-
-
 
 def main():
     x = symbols('x')
