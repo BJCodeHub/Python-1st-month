@@ -1,0 +1,36 @@
+import datetime, w2n2w, calendar, time
+
+yob = input("Enter year of birth: ")
+if yob.isalpha:
+    yob = w2n2w.word_to_num(yob)
+else:
+    yob = int(yob)
+    
+mob = input("Enter month of birth: ")
+if mob.isalpha:
+    mob = mob.capitalize()
+    if mob in calendar.month_name:
+        mob = list(calendar.month_name).index(mob)
+    elif mob.isdigit:
+         mob = int(mob)  
+    else:
+        print("Invalid month!")    
+            
+dob = input("Enter date of birth: ")
+if dob.isalpha:
+    dob = w2n2w.word_to_num(dob)
+else:
+    dob = int(dob)
+    
+def age(birth_year , birth_month, birth_date):
+    birth_date = datetime.date(yob, mob, dob)
+    today = datetime.date.today()
+    ddob = today - birth_date
+    
+    #years, days = divmod(age.days, 365)
+    #months, days = divmod(days, 30)
+    #print(f"You're {years} years and {months} months and {days} days old")
+
+    print("You're " + str(ddob.days // 365) + " years and " + str((ddob.days % 365) // 30) + " months and " + str((ddob.days%365) % 30) + " days old.") 
+       
+age(yob, mob, dob)
