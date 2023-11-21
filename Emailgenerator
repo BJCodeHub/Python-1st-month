@@ -1,0 +1,27 @@
+import random
+
+fullname = input('Enter full name: ')
+differentiator = random.randint(0, 999)
+
+full_name = (fullname.replace(" ", "")).lower()
+
+email_service = {
+    'hotmail' : '@hotmail.com',
+    'gmail' : '@gmail.com'
+}
+
+email_provider = input(f'Enter email type  hotmail or gmail : ') or 'NA'
+
+if email_provider != 'NA':
+    email_prov = email_service.get(email_provider)
+    
+else:
+    email_prov = input('Enter custom email provider eg. "@gmail.com": ')
+        
+def email(name, symbol, email_type):
+    
+    return (str(name) + "" +str(symbol) + "" + str(email_type))
+    
+email_address = email(full_name, differentiator, email_prov)
+
+print(email_address
