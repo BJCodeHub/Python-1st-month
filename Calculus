@@ -1,0 +1,117 @@
+import tkinter as tk
+from sympy import diff, integrate, sympify, Symbol, evalf
+
+root = tk.Tk()
+root.title('Calculus Calculator')
+root.geometry('400x400')
+
+#Deriving
+equation_label = tk.Label(root, text='Enter equation:')
+equation_label.grid(row=0, column=0, padx=10, pady=10)
+
+equation_entry = tk.Entry(root, text=' ')
+equation_entry.grid(row=0, column=1, padx=10, pady=10)
+
+respect_to_diff = tk.Label(root, text='With respect to')
+respect_to_diff.grid(row=1, column=0, padx=10, pady=10)
+
+respect_entry_diff = tk.Entry(root)
+respect_entry_diff.grid(row=1, column=1, padx=10, pady=10)
+
+number_diff = tk.Label(root, text='Integral/derivative number')
+number_diff.grid(row=2, column=0, padx=5, pady=5)
+
+no_entry = tk.Entry(root)
+no_entry.grid(row=2, column=1, padx=10, pady=10)
+
+diff_button = tk.Button(root, text='Differentiate')
+diff_button.grid(row=3, column=0, columnspan=2, padx=20, pady=10)
+
+result_entry = tk.Label(root, text='')
+result_entry.grid(row=4, column=0, columnspan=2, padx=10, pady=10)
+
+def diff_eq():
+    equation_diff = equation_entry.get()
+    respect_to = respect_entry_diff.get()
+    no_diff = no_entry.get()
+
+    diff_e = diff(sympify(equation_diff), respect_to, no_diff)
+    result_entry.config(text=diff_e)
+
+diff_button.config(command=diff_eq)
+
+#Integral
+inte_equation = tk.Label(root, text = 'Enter equation to integrate: ')
+inte_equation.grid(row = 5, column = 0, pady = 10, padx = 10)
+
+inte_eq = tk.Entry(root)
+inte_eq.grid(row = 5, column = 1, pady = 10, padx = 10)
+
+respect_to_inte = tk.Label(root, text ='Integrate with respect to: ' )
+respect_to_inte.grid(row = 6, column = 0, pady = 10, padx = 10)
+
+intrespect_to = tk.Entry(root)
+intrespect_to.grid(row = 6, column = 1, pady = 10, padx = 10)
+
+inte_button = tk.Button(root, text='Integrate')
+inte_button.grid(row=7, column=0, columnspan = 2,  padx=10, pady=1)
+
+integrated = tk.Label(root, text =' ')
+integrated.grid(row = 8, column = 0, pady = 10, padx = 10)
+
+def integration():
+    equation_inte = inte_eq.get()
+    respect_to = intrespect_to.get()
+    
+    x = Symbol(respect_to)
+    inte = integrate(sympify(equation_inte), x).evalf()
+    integrated.config(text = inte )
+
+inte_button.config(command = integration)
+
+#Definite integral
+difinte_equation = tk.Label(root, text = 'Enter equation to integrate: ')
+difinte_equation.grid(row = 9, column = 0, pady = 10, padx = 10)
+
+difinte_eq = tk.Entry(root)
+difinte_eq.grid(row = 9, column = 1, pady = 10, padx = 10)
+
+difrespect_to_inte = tk.Label(root, text ='Integrate with respect to: ' )
+difrespect_to_inte.grid(row = 10, column = 0, pady = 10, padx = 10)
+
+difintrespect_to = tk.Entry(root)
+difintrespect_to.grid(row = 10, column = 1, pady = 10, padx = 10)
+
+rangeff = tk.Label(root, text ='Integrate range from: ' )
+rangeff.grid(row = 11, column = 0, pady = 10, padx = 10)
+
+rangef = tk.Entry(root)
+rangef.grid(row = 11, column = 1, pady = 10, padx = 10)
+
+rangett = tk.Label(root, text ='Integrate range to: ' )
+rangett.grid(row = 12, column = 0, pady = 10, padx = 10)
+
+ranget= tk.Entry(root)
+ranget.grid(row = 12, column = 1, pady = 10, padx = 10)
+
+difinte_button = tk.Button(root, text='Integrate')
+difinte_button.grid(row=13, column=0, columnspan = 2,  padx=10, pady=1)
+
+difintegrated = tk.Label(root, text =' ')
+difintegrated.grid(row = 14, column = 0, pady = 10, padx = 10)
+
+def dif_integral():
+    difequation_inte = difinte_eq.get()
+    difrespect_to = difintrespect_to.get()
+    range_from = rangef.get()
+    range_to = ranget.get()
+    
+    x = Symbol(difrespect_to)
+    
+    difinte = integrate(sympify(difequation_inte), (x, range_from, range_to)).evalf()
+    
+    difintegrated.config(text = difinte )
+
+difinte_button.config(command = dif_integral)
+
+root.mainloop()
