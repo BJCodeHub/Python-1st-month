@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            width: 100%;
+            margin: 10 auto;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: navy;
+        }
+        h2 {
+            color: white;
+            background-color: lightblue;
+            text-shadow: 2px 2px 4px #000000;
+        }
+        a {
+            color: #0066cc;
+        }
+        .section {
+            padding: 10px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Justin Bright Ndhlovu</h1>
+        <div class="section">
+            <hr>
+            <h2>Personal</h2>
+            <table>
+                <tr>
+                    <td><strong>Name:</strong></td>
+                    <td>Justin Ndhlovu</td>
+                </tr>
+                <tr>
+                    <td><strong>Address:</strong></td>
+                    <td>P O Box 1503, Acornhoek, 1360</td>
+                </tr>
+				<tr>
+                    <td><strong>
+					Phone Number:</strong></td>
+                    <td>0638569543</td>
+                </tr>
+                <tr>
+                    <td><strong>Email address:</strong></td>
+                    <td><a href="mailto:brouyound@hotmail.com">brouyound@hotmail.com</a></td>
+                </tr>
+            </table>
+            <hr>
+        </div>
+
+        <div class="section">
+            <hr>
+            <h2>Resume Objective</h2>
+            <p>I embarked on my journey in the realm of computer applications and technology during my high school years. A month ago, I ventured into Python programming and have since developed several projects that include calculus calculators with a graphical user interface (GUI), an age calculator, and an email generator.</p>
+
+            <p>My recent endeavours have led me to explore data analysis, utilizing both Python and SQL. These experiences have not only enriched my knowledge but also fuelled my passion for continuous learning and innovation in the field of technology.</p>
+            <hr>
+        </div>
+
+        <div class="section">
+            <hr>
+            <h2>Work Experience</h2>
+            <h3>CV Creator/ Hazyview/ Dec-2022 to Jan-2023</h3>
+            <p>Typing and creating CVs for people. Helping people present their skills and experience in a professional manner. Providing advice on how to improve the content and layout of CVs.</p>
+            <hr>
+        </div>
+
+        <div class="section">
+            <hr>
+            <h2>Interests</h2>
+            <p>Coding Challenges, Puzzles, Nature, Basketball</p>
+            <hr>
+        </div>
+
+        <div class="section">
+            <hr>
+            <h2>Skills</h2>
+            <ul>
+                <li>Microsoft (Word, excel, Access, PowerPoint) - Experienced</li>
+                <li>Data Analysis - Beginner</li>
+                <li>Python Programming - Beginner</li>
+                <li>HTML - Intermediate</li>
+                <li>Research Skills - Skillful</li>
+            </ul>
+            <hr>
+        </div>
+
+        <div class="section">
+            <hr>
+            <h2>GitHub Repository Link</h2>
+            <p><a href="https://github.com/BJCodeHub/Python-1st-month.git">https://github.com/BJCodeHub/Python-1st-month.git</a></p>
+            <hr>
+        </div>
+    </div>
+</body>
+</html>
